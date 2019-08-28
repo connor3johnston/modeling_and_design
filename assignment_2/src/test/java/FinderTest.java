@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
@@ -22,12 +23,12 @@ public class FinderTest {
 
     @Test
     public void findMax_invalidEmptyArray() {
-        assertEquals(Finder.findMax(new int[]{}), null);
+        assertNull(Finder.findMax(new int[]{}));
     }
 
     @Test
     public void findMax_invalidNullArray() {
-        assertEquals(Finder.findMax(null), null);
+        assertNull(Finder.findMax(null));
     }
 
     @Test
@@ -47,11 +48,11 @@ public class FinderTest {
 
     @Test
     public void findMin_invalidEmptyArray() {
-        assertEquals(Finder.findMin(new int[]{}), null);
+        assertNull(Finder.findMin(new int[]{}));
     }
 
     @Test
     public void findMin_invalidNullArray() {
-        assertEquals(Finder.findMin(null), null);
+        assertNull(Finder.findMin(null));
     }
 }
