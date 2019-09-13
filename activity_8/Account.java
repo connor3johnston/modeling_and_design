@@ -3,7 +3,6 @@ public class Account {
   protected static String owner;
   protected static double balance;
   protected static double monthlyDepositAmount;
-  protected static double monthlyWithdrawalAmount;
 
   public Account(double initialBalance, String owner) {
     this.owner = owner;
@@ -32,15 +31,10 @@ public class Account {
       throw new IllegalArgumentException("Invalid amount: withdrawal amount cannot be negative");
     }
 
-    monthlyWithdrawalAmount += withdrawalAmount;
     balance -= withdrawalAmount;
   }
 
   public void resetMonthlyDepositAmount() {
     monthlyDepositAmount = 0;
-  }
-
-  public void resetMonthlyWithdrawalAmount() {
-    monthlyWithdrawalAmount = 0;
   }
 }
