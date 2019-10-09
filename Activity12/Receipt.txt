@@ -1,0 +1,10 @@
+Welcome to the Store!
+Customer ID: 5
+Customer Name: Connor Johnston
+Product ID: Goldfish
+Product Name: Goldfish
+Quantity: 3
+Price: $4.99
+Tax: $1.35
+Total Cost: $16.32
+Thanks for shopping with us!

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/Connor/Desktop/Assignment3.db" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><current_tab id="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1842"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="Products"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Customers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="Products" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table><table schema="main" name="Purchases" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk=""><sort/><column_widths/><filter_values/><display_formats/><hidden_columns/><plot_y_axes/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO Purchases(purchaseID, customerID, productID, date, quantity, price, tax, totalCost)
+VALUES
+(00000001, 00000001, 00000001, &quot;9/13/2019&quot;, 5, 3.99, 0.36, 21.75),
+(00000002, 00000001, 00000002, &quot;9/13/2019&quot;, 5, 4.99, 0.45, 27.20),
+(00000003, 00000002, 00000004, &quot;10/09/2019&quot;, 1, 14.79, 1.33, 16.12),
+(00000004, 00000002, 00000005, &quot;10/10/2019&quot;, 1, 250.99, 7.53, 258.52),
+(00000005, 00000003, 00000003, &quot;9/27/2019&quot;, 50, 9.99, 0.40, 10.39),
+(00000006, 00000003, 00000003, &quot;9/30/2019&quot;, 50, 9.99, 0.40, 10.39),
+(00000007, 00000004, 00000001, &quot;9/13/2019&quot;, 5, 3.99, 0.36, 21.75),
+(00000008, 00000004, 00000002, &quot;9/13/2019&quot;, 5, 4.99, 0.45, 27.20),
+(00000009, 00000005, 00000005, &quot;10/10/2019&quot;, 1, 250.99, 7.53, 258.52), 
+(00000010, 00000005, 00000002, &quot;9/13/2019&quot;, 5, 4.99, 0.45, 27.20);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
