@@ -1,10 +1,10 @@
 Welcome to the Store!
-Customer ID: 5
-Customer Name: Connor Johnston
-Product ID: Goldfish
-Product Name: Goldfish
-Quantity: 3
-Price: $4.99
-Tax: $1.35
-Total Cost: $16.32
+Customer ID: 4
+Customer Name: Oscar the Grouch
+Product ID: Pringles
+Product Name: Pringles
+Quantity: 5
+Price: $3.99
+Tax: $1.80
+Total Cost: $21.75
 Thanks for shopping with us!
