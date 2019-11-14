@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,40 +27,72 @@ public class ManageCustomerUI {
         this.view = new JFrame();
         this.mainView = mainView;
 
+        //View configuration
         view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         view.setTitle("Manage Customer Information");
         view.setSize(600, 400);
         view.getContentPane().setLayout(new BoxLayout(view.getContentPane(), BoxLayout.PAGE_AXIS));
 
+        //Buttons
         JPanel panelButtons = new JPanel(new FlowLayout());
         panelButtons.add(btnLoad);
         panelButtons.add(btnSave);
         panelButtons.add(btnExit);
         view.getContentPane().add(panelButtons);
 
+        //Customer ID line
         JPanel line1 = new JPanel(new FlowLayout());
-        line1.add(new JLabel("CustomerID "));
+        JLabel idLabel = new JLabel("Customer ID");
+
+        idLabel.setPreferredSize(new Dimension(100, 50));
+        idLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        line1.add(idLabel);
         line1.add(txtCustomerID);
         view.getContentPane().add(line1);
 
+        //Name line
         JPanel line2 = new JPanel(new FlowLayout());
-        line2.add(new JLabel("Name "));
+        JLabel nameLabel = new JLabel("Name");
+
+        nameLabel.setPreferredSize(new Dimension(100, 50));
+        nameLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        line2.add(nameLabel);
         line2.add(txtName);
         view.getContentPane().add(line2);
 
+        //Phone line
         JPanel line3 = new JPanel(new FlowLayout());
-        line3.add(new JLabel("Phone "));
+        JLabel phoneLabel = new JLabel("Phone");
+
+        phoneLabel.setPreferredSize(new Dimension(100, 50));
+        phoneLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        line3.add(phoneLabel);
         line3.add(txtPhone);
         view.getContentPane().add(line3);
 
+        //Address line
         JPanel line4 = new JPanel(new FlowLayout());
-        line4.add(new JLabel("Address "));
+        JLabel addressLabel = new JLabel("Address");
+
+        addressLabel.setPreferredSize(new Dimension(100, 50));
+        addressLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        line4.add(addressLabel);
         line4.add(txtAddress);
         view.getContentPane().add(line4);
 
+        //Payment line
         JPanel line5 = new JPanel(new FlowLayout());
-        line5.add(new JLabel("Payment Info "));
+        JLabel paymentLabel = new JLabel("Payment Info");
+
+        paymentLabel.setPreferredSize(new Dimension(100, 50));
+        paymentLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        line5.add(paymentLabel);
         line5.add(txtPaymentInfo);
         view.getContentPane().add(line5);
 

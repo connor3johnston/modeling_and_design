@@ -1,4 +1,7 @@
+import com.sun.org.apache.xml.internal.security.utils.JDKXPathAPI;
+
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +16,7 @@ public class ManageProductUI {
 
     public JButton btnLoad = new JButton("Load Product");
     public JButton btnSave = new JButton("Save Product");
-    public JButton btnExit = new JButton("Exit");
+    public JButton btnCancel = new JButton("Cancel");
 
     public JTextField txtProductID = new JTextField(20);
     public JTextField txtName = new JTextField(20);
@@ -25,42 +28,60 @@ public class ManageProductUI {
         this.view = new JFrame();
         this.mainView = mainView;
 
+        //View configuration
         view.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        view.setTitle("Update Product Information");
+        view.setTitle("Manage Product Information");
         view.setSize(600, 400);
         view.getContentPane().setLayout(new BoxLayout(view.getContentPane(), BoxLayout.PAGE_AXIS));
 
+        //Buttons
         JPanel panelButtons = new JPanel(new FlowLayout());
         panelButtons.add(btnLoad);
         panelButtons.add(btnSave);
-        panelButtons.add(btnExit);
+        panelButtons.add(btnCancel);
+        panelButtons.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(panelButtons);
 
+        //Product ID line
         JPanel line1 = new JPanel(new FlowLayout());
-        line1.add(new JLabel("ProductID "));
+        JLabel idLabel = new JLabel("Product ID");
+        idLabel.setPreferredSize(new Dimension(100, 50));
+        idLabel.setHorizontalAlignment(JLabel.RIGHT);
+        line1.add(idLabel);
         line1.add(txtProductID);
         view.getContentPane().add(line1);
 
+        //Name line
         JPanel line2 = new JPanel(new FlowLayout());
-        line2.add(new JLabel("Name "));
+        JLabel nameLabel = new JLabel("Name");
+        nameLabel.setPreferredSize(new Dimension(100, 50));
+        nameLabel.setHorizontalAlignment(JLabel.RIGHT);
+        line2.add(nameLabel);
         line2.add(txtName);
         view.getContentPane().add(line2);
 
+        //Price line
         JPanel line3 = new JPanel(new FlowLayout());
-        line3.add(new JLabel("Price "));
+        JLabel priceLabel = new JLabel("Price");
+        priceLabel.setPreferredSize(new Dimension(100, 50));
+        priceLabel.setHorizontalAlignment(JLabel.RIGHT);
+        line3.add(priceLabel);
         line3.add(txtPrice);
         view.getContentPane().add(line3);
 
+        //Quantity line
         JPanel line4 = new JPanel(new FlowLayout());
-        line4.add(new JLabel("Quantity "));
+        JLabel quantLabel = new JLabel("Quantity");
+        quantLabel.setPreferredSize(new Dimension(100, 50));
+        quantLabel.setHorizontalAlignment(JLabel.RIGHT);
+        line4.add(quantLabel);
         line4.add(txtQuantity);
         view.getContentPane().add(line4);
 
-
         btnLoad.addActionListener(new LoadButtonListener());
         btnSave.addActionListener(new SaveButtonListener());
-        btnExit.addActionListener(new ExitButtonListener());
+        btnCancel.addActionListener(new CancelButtonListener());
     }
 
     public void run() {
@@ -182,7 +203,7 @@ public class ManageProductUI {
         }
     }
 
-    class ExitButtonListener implements ActionListener {
+    class CancelButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {

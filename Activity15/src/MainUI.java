@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 public class MainUI {
     JFrame view;
 
-    public JButton btnUpdateProduct = new JButton("Manage Product Information");
-    public JButton btnUpdateCustomer = new JButton("Manage Customer Information");
+    public JButton btnUpdateProduct = new JButton("Manage Product");
+    public JButton btnUpdateCustomer = new JButton("Manage Customer");
     public JButton btnAddPurchase = new JButton("Add Purchase");
     public JButton btnExit = new JButton("Exit");
 
@@ -17,22 +17,25 @@ public class MainUI {
         this.view = new JFrame();
         this.adapter = adapter;
 
+        //View configuration
         view.setTitle("Store Management System");
-        view.setSize(1000, 600);
+        view.setSize(900, 300);
         view.getContentPane().setLayout(new BoxLayout(view.getContentPane(), BoxLayout.PAGE_AXIS));
 
-        JLabel title = new JLabel("Welcome to the Store Manager!");
+        //Title configuration
+        JLabel title = new JLabel("Store Management System", JLabel.CENTER);
 
         title.setFont(title.getFont().deriveFont(24.0f));
-        title.setHorizontalAlignment(SwingConstants.CENTER);
-        title.setVerticalAlignment(SwingConstants.CENTER);
+        title.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         view.getContentPane().add(title);
 
+        //Buttons
         JPanel panelButtons = new JPanel(new FlowLayout());
         panelButtons.add(btnUpdateProduct);
         panelButtons.add(btnUpdateCustomer);
         panelButtons.add(btnAddPurchase);
         panelButtons.add(btnExit);
+        panelButtons.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(panelButtons);
 
         btnUpdateProduct.addActionListener(new UpdateProductListener());

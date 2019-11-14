@@ -21,10 +21,10 @@ public class AddPurchaseUI {
     public JTextField txtCustomerID = new JTextField(20);
     public JTextField txtQuantity = new JTextField(20);
 
-    public JLabel labPrice = new JLabel("Product Price: ");
-    public JLabel labDate = new JLabel("Date of Purchase");
-    public JLabel labCustomerName = new JLabel("Customer Name: ");
-    public JLabel labProductName = new JLabel("Product Name: ");
+    public JLabel labDate = new JLabel("Purchase Date: ");
+    public JLabel labProductName = new JLabel("Product Name: [not specified]");
+    public JLabel labCustomerName = new JLabel("Customer Name: [not specified]");
+    public JLabel labPrice = new JLabel("Product Price: [not specified]");
     public JLabel labCost = new JLabel("Cost: $0.00");
     public JLabel labTax = new JLabel("Tax: $0.00");
     public JLabel labTotalCost = new JLabel("Total Cost: $0.00");
@@ -40,45 +40,90 @@ public class AddPurchaseUI {
         this.adapter = adapter;
         this.mainView = mainView;
 
+        //View configuration
         view.setTitle("Add Purchase");
-        view.setSize(600, 400);
+        view.setSize(800, 600);
         view.getContentPane().setLayout(new BoxLayout(view.getContentPane(), BoxLayout.PAGE_AXIS));
 
+        //Purchase ID line
         JPanel line1 = new JPanel(new FlowLayout());
-        line1.add(new JLabel("Purchase ID "));
+        JLabel idLabel = new JLabel("Purchase ID");
+
+        idLabel.setPreferredSize(new Dimension(100, 50));
+        idLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        labDate.setPreferredSize(new Dimension(350, 50));
+        labDate.setHorizontalAlignment(JLabel.LEFT);
+
+        line1.add(idLabel);
         line1.add(txtPurchaseID);
         line1.add(labDate);
+        line1.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(line1);
 
+        //Product ID line
         JPanel line2 = new JPanel(new FlowLayout());
-        line2.add(new JLabel("Product ID "));
+        JLabel productLabel = new JLabel("Product ID");
+
+        productLabel.setPreferredSize(new Dimension(100, 50));
+        productLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        labProductName.setPreferredSize(new Dimension(350, 50));
+        labProductName.setHorizontalAlignment(JLabel.LEFT);
+
+        line2.add(productLabel);
         line2.add(txtProductID);
         line2.add(labProductName);
+        line2.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(line2);
 
+        //Customer ID line
         JPanel line3 = new JPanel(new FlowLayout());
-        line3.add(new JLabel("Customer ID "));
+        JLabel customerLabel = new JLabel("Customer ID");
+
+        customerLabel.setPreferredSize(new Dimension(100, 50));
+        customerLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        labCustomerName.setPreferredSize(new Dimension(350, 50));
+        labCustomerName.setHorizontalAlignment(JLabel.LEFT);
+
+        line3.add(customerLabel);
         line3.add(txtCustomerID);
         line3.add(labCustomerName);
+        line3.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(line3);
 
+        //Quantity line
         JPanel line4 = new JPanel(new FlowLayout());
-        line4.add(new JLabel("Quantity "));
+        JLabel quantLabel = new JLabel("Quantity");
+
+        quantLabel.setPreferredSize(new Dimension(100, 50));
+        quantLabel.setHorizontalAlignment(JLabel.RIGHT);
+
+        labPrice.setPreferredSize(new Dimension(350, 50));
+        labPrice.setHorizontalAlignment(JLabel.LEFT);
+
+        line4.add(quantLabel);
         line4.add(txtQuantity);
         line4.add(labPrice);
+        line4.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(line4);
 
+        //Cost and tax line
         JPanel line5 = new JPanel(new FlowLayout());
         line5.add(labCost);
         line5.add(labTax);
         line5.add(labTotalCost);
+        line5.setAlignmentX(JPanel.CENTER_ALIGNMENT);
         view.getContentPane().add(line5);
 
+        //Buttons
         JPanel panelButtons = new JPanel(new FlowLayout());
         panelButtons.add(btnAdd);
         panelButtons.add(btnCancel);
         view.getContentPane().add(panelButtons);
 
+        //Check if field has been filled
         txtProductID.addFocusListener(new ProductIDFocusListener());
         txtCustomerID.addFocusListener(new CustomerIDFocusListener());
         txtQuantity.addFocusListener(new QuantityChangeListener());
@@ -144,7 +189,7 @@ public class AddPurchaseUI {
     public void run() {
         purchase = new PurchaseModel();
         purchase.mDate = Calendar.getInstance().getTime().toString();
-        labDate.setText(String.format("Date of Purchase: %s", purchase.mDate));
+        labDate.setText(String.format("Purchase Date: %s", purchase.mDate));
         view.setVisible(true);
     }
 
@@ -185,7 +230,7 @@ public class AddPurchaseUI {
 
             if (product == null) {
                 JOptionPane.showMessageDialog(null, String.format("Error: No Corresponding Product [id = %s]", purchase.mProductID), "Error Message", JOptionPane.ERROR_MESSAGE);
-                labProductName.setText("Product Name: ");
+                labProductName.setText("Product Name: [not specified]");
                 return;
             }
 
@@ -227,11 +272,11 @@ public class AddPurchaseUI {
 
             if (customer == null) {
                 JOptionPane.showMessageDialog(null, String.format("Error: No Corresponding Customer [id = %s]", purchase.mCustomerID), "Error Message", JOptionPane.ERROR_MESSAGE);
-                labCustomerName.setText("Customer Name: ");
+                labCustomerName.setText("Customer Name: [not specified]");
                 return;
             }
 
-            labCustomerName.setText(String.format("Product Name: %s", customer.mName));
+            labCustomerName.setText(String.format("Customer Name: %s", customer.mName));
         }
     }
 
