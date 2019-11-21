@@ -5,7 +5,7 @@ import java.net.*;
 import java.util.Scanner;
 
 public class StoreServer {
-    static String dbfile = "/Users/Connor/Desktop/current-classes/modeling_and_design/Project2/store.db";
+    static String dbfile = "/Users/Connor/Desktop/current-classes/modeling_and_design/Project2/data/store.db";
 
     public static void main(String[] args) {
 
