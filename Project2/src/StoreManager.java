@@ -1,6 +1,4 @@
 public class StoreManager {
-    private static StoreManager instance = null;
-
     public static StoreManager getInstance() {
         return new StoreManager();
     }

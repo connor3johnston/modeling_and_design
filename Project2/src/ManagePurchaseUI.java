@@ -308,7 +308,7 @@ public class ManagePurchaseUI {
             } else {
                 product = gson.fromJson(msg.data, ProductModel.class);
                 if (product.mName.equals("null")) {
-                    JOptionPane.showMessageDialog(null, "Product Name: [does not exist]");
+                    labProductName.setText("Product Name: [does not exist]");
                     return;
                 }
                 labProductName.setText(String.format("Product Name: %s", product.mName));
@@ -362,11 +362,11 @@ public class ManagePurchaseUI {
             }
 
             if (msg.code == MessageModel.OPERATION_FAILED) {
-                JOptionPane.showMessageDialog(null, "Customer Name: [does not exist]");
+                labCustomerName.setText("Customer Name: [does not exist]");
             } else {
                 customer = gson.fromJson(msg.data, CustomerModel.class);
                 if (customer.mName.equals("null")) {
-                    JOptionPane.showMessageDialog(null, "Customer Name: [does not exist]");
+                    labCustomerName.setText("Customer Name: [does not exist]");
                     return;
                 }
 
