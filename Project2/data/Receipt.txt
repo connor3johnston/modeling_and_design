@@ -1,0 +1,10 @@
+Welcome to the Store!
+Customer ID: 1
+Customer Name: Elmo
+Product ID: Goldfish
+Product Name: Goldfish
+Quantity: 4
+Price: $7.79
+Tax: $2.80
+Total Cost: $33.96
+Thanks for shopping with us!
